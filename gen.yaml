@@ -1,0 +1,15 @@
+configVersion: 1.0.0
+generation:
+  comments:
+    disableComments: false
+    omitDescriptionIfSummaryPresent: false
+  baseServerURL: ""
+  sdkClassName: ccgAuth
+  singleTagPerOp: false
+  tagNamespacingDisabled: false
+typescript:
+  version: 0.0.1
+  author: haseeb-mhr
+  clientServerStatusCodesAsErrors: true
+  maxMethodParams: 0
+  packageName: ccgAuth
