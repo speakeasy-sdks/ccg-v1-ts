@@ -1,6 +1,6 @@
 {
   "name": "ccgAuth",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "author": "haseeb-mhr",
   "scripts": {
     "prepare": "tsc --build"
