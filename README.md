@@ -40,11 +40,11 @@ sdk.service.getstatus().then((res: GetstatusResponse) => {
 ## Available Resources and Operations
 
 
-### [Service](docs/sdks/service/README.md)
+### [service](docs/sdks/service/README.md)
 
 * [getstatus](docs/sdks/service/README.md#getstatus) - get status
 
-### [User](docs/sdks/user/README.md)
+### [user](docs/sdks/user/README.md)
 
 * [getuser](docs/sdks/user/README.md#getuser) - get user
 <!-- End SDK Available Operations -->
