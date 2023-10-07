@@ -13,19 +13,20 @@ get user
 
 ```typescript
 import { CcgAuth } from "ccgAuth";
-import { GetuserResponse } from "ccgAuth/dist/sdk/models/operations";
 
-const sdk = new CcgAuth({
-  security: {
-    httpCCG: "",
-  },
-});
+(async() => {
+  const sdk = new CcgAuth({
+    security: {
+      httpCCG: "",
+    },
+  });
 
-sdk.user.getuser().then((res: GetuserResponse) => {
+  const res = await sdk.user.getuser();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

@@ -13,19 +13,20 @@ get status
 
 ```typescript
 import { CcgAuth } from "ccgAuth";
-import { GetstatusResponse } from "ccgAuth/dist/sdk/models/operations";
 
-const sdk = new CcgAuth({
-  security: {
-    httpCCG: "",
-  },
-});
+(async() => {
+  const sdk = new CcgAuth({
+    security: {
+      httpCCG: "",
+    },
+  });
 
-sdk.service.getstatus().then((res: GetstatusResponse) => {
+  const res = await sdk.service.getstatus();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
