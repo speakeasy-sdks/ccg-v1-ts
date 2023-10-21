@@ -21,19 +21,20 @@ yarn add https://github.com/speakeasy-sdks/ccg-v1-ts
 ```typescript
 import { CcgAuth } from "ccgAuth";
 
-(async() => {
-  const sdk = new CcgAuth({
-    security: {
-      httpCCG: "",
-    },
-  });
+(async () => {
+    const sdk = new CcgAuth({
+        security: {
+            httpCCG: "",
+        },
+    });
 
-  const res = await sdk.service.getstatus();
+    const res = await sdk.service.getstatus();
 
-  if (res.statusCode == 200) {
-    // handle response
-  }
+    if (res.statusCode == 200) {
+        // handle response
+    }
 })();
+
 ```
 <!-- End SDK Example Usage -->
 
