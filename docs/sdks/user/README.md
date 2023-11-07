@@ -1,5 +1,5 @@
 # User
-(*user*)
+(*.user*)
 
 ### Available Operations
 
@@ -22,6 +22,7 @@ import { CcgAuth } from "ccgAuth";
   });
 
   const res = await sdk.user.getuser();
+
 
   if (res.statusCode == 200) {
     // handle response

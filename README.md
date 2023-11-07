@@ -42,11 +42,11 @@ import { CcgAuth } from "ccgAuth";
 ## Available Resources and Operations
 
 
-### [service](docs/sdks/service/README.md)
+### [.service](docs/sdks/service/README.md)
 
 * [getstatus](docs/sdks/service/README.md#getstatus) - get status
 
-### [user](docs/sdks/user/README.md)
+### [.user](docs/sdks/user/README.md)
 
 * [getuser](docs/sdks/user/README.md#getuser) - get user
 <!-- End SDK Available Operations -->
@@ -68,6 +68,139 @@ return value of `next` is `null`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
 <!-- End Pagination -->
+
+
+
+<!-- Start Error Handling -->
+# Error Handling
+
+Handling errors in your SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+
+
+<!-- End Error Handling -->
+
+
+
+<!-- Start Server Selection -->
+# Server Selection
+
+## Select Server by Index
+
+You can override the default server globally by passing a server index to the `serverIdx: number` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+
+| # | Server | Variables |
+| - | ------ | --------- |
+| 0 | `http://localhost:3000/oauth2/non-auth-server` | None |
+| 1 | `http://localhost:3000/oauth2/auth-server` | None |
+
+For example:
+
+```typescript
+import { CcgAuth } from "ccgAuth";
+
+(async () => {
+    const sdk = new CcgAuth({
+        serverIdx: 1,
+        security: {
+            httpCCG: "",
+        },
+    });
+
+    const res = await sdk.service.getstatus();
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+})();
+
+```
+
+
+## Override Server URL Per-Client
+
+The default server can also be overridden globally by passing a URL to the `serverURL: str` optional parameter when initializing the SDK client instance. For example:
+
+```typescript
+import { CcgAuth } from "ccgAuth";
+
+(async () => {
+    const sdk = new CcgAuth({
+        serverURL: "http://localhost:3000/oauth2/non-auth-server",
+        security: {
+            httpCCG: "",
+        },
+    });
+
+    const res = await sdk.service.getstatus();
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+})();
+
+```
+<!-- End Server Selection -->
+
+
+
+<!-- Start Custom HTTP Client -->
+# Custom HTTP Client
+
+The Typescript SDK makes API calls using the (axios)[https://axios-http.com/docs/intro] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
+
+
+For example, you could specify a header for every request that your sdk makes as follows:
+
+```typescript
+from ccgAuth import CcgAuth;
+import axios;
+
+const httpClient = axios.create({
+    headers: {'x-custom-header': 'someValue'}
+})
+
+
+const sdk = new CcgAuth({defaultClient: httpClient});
+```
+
+
+<!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security scheme globally:
+
+| Name         | Type         | Scheme       |
+| ------------ | ------------ | ------------ |
+| `httpCCG`    | oauth2       | OAuth2 token |
+
+You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
+
+```typescript
+import { CcgAuth } from "ccgAuth";
+
+(async () => {
+    const sdk = new CcgAuth({
+        security: {
+            httpCCG: "",
+        },
+    });
+
+    const res = await sdk.service.getstatus();
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+})();
+
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

@@ -1,5 +1,5 @@
 # Service
-(*service*)
+(*.service*)
 
 ### Available Operations
 
@@ -22,6 +22,7 @@ import { CcgAuth } from "ccgAuth";
   });
 
   const res = await sdk.service.getstatus();
+
 
   if (res.statusCode == 200) {
     // handle response
