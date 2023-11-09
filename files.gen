@@ -27,11 +27,11 @@ src/sdk/models/errors/index.ts
 src/sdk/models/operations/index.ts
 src/sdk/models/shared/index.ts
 USAGE.md
-docs/models/operations/getstatusservicestatus.md
-docs/models/operations/getstatusresponse.md
-docs/models/operations/getuseruser.md
-docs/models/operations/getuserresponse.md
-docs/models/shared/security.md
+docs/sdk/models/operations/getstatusservicestatus.md
+docs/sdk/models/operations/getstatusresponse.md
+docs/sdk/models/operations/getuseruser.md
+docs/sdk/models/operations/getuserresponse.md
+docs/sdk/models/shared/security.md
 docs/sdks/ccgauth/README.md
 docs/sdks/service/README.md
 docs/sdks/user/README.md

@@ -42,11 +42,11 @@ import { CcgAuth } from "ccgAuth";
 ## Available Resources and Operations
 
 
-### [.service](docs/sdks/service/README.md)
+### [service](docs/sdks/service/README.md)
 
 * [getstatus](docs/sdks/service/README.md#getstatus) - get status
 
-### [.user](docs/sdks/user/README.md)
+### [user](docs/sdks/user/README.md)
 
 * [getuser](docs/sdks/user/README.md#getuser) - get user
 <!-- End SDK Available Operations -->
@@ -74,9 +74,36 @@ Here's an example of one such pagination call:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 
+## Example
+
+```typescript
+import { CcgAuth } from "ccgAuth";
+
+(async () => {
+    const sdk = new CcgAuth({
+        security: {
+            httpCCG: "",
+        },
+    });
+
+    let res;
+    try {
+        res = await sdk.service.getstatus();
+    } catch (e) {}
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+})();
+
+```
 <!-- End Error Handling -->
 
 
@@ -162,19 +189,16 @@ const httpClient = axios.create({
 
 const sdk = new CcgAuth({defaultClient: httpClient});
 ```
-
-
 <!-- End Custom HTTP Client -->
 
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security scheme globally:
+This SDK supports the following security scheme globally:
 
 | Name         | Type         | Scheme       |
 | ------------ | ------------ | ------------ |

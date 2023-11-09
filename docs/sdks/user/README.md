@@ -1,5 +1,5 @@
 # User
-(*.user*)
+(*user*)
 
 ### Available Operations
 
@@ -23,7 +23,6 @@ import { CcgAuth } from "ccgAuth";
 
   const res = await sdk.user.getuser();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -39,5 +38,9 @@ import { CcgAuth } from "ccgAuth";
 
 ### Response
 
-**Promise<[operations.GetuserResponse](../../models/operations/getuserresponse.md)>**
+**Promise<[operations.GetuserResponse](../../sdk/models/operations/getuserresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

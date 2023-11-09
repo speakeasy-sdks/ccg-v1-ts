@@ -1,5 +1,5 @@
 # Service
-(*.service*)
+(*service*)
 
 ### Available Operations
 
@@ -23,7 +23,6 @@ import { CcgAuth } from "ccgAuth";
 
   const res = await sdk.service.getstatus();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -39,5 +38,9 @@ import { CcgAuth } from "ccgAuth";
 
 ### Response
 
-**Promise<[operations.GetstatusResponse](../../models/operations/getstatusresponse.md)>**
+**Promise<[operations.GetstatusResponse](../../sdk/models/operations/getstatusresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
