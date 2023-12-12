@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 0f8867eecb609441e54568f0193d015a
   docVersion: "1.0"
-  speakeasyVersion: 1.121.1
-  generationVersion: 2.194.1
+  speakeasyVersion: 1.126.0
+  generationVersion: 2.213.3
 generation:
   comments: {}
   sdkClassName: ccgAuth
@@ -12,11 +12,11 @@ generation:
     optionalPropertyRendering: withExample
 features:
   typescript:
-    core: 3.1.4
-    globalSecurity: 2.82.0
+    core: 3.3.0
+    globalSecurity: 2.82.1
     globalServerURLs: 2.82.1
 typescript:
-  version: 0.12.4
+  version: 0.13.0
   author: haseeb-mhr
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: false
@@ -34,3 +34,4 @@ typescript:
   outputModelSuffix: output
   packageName: ccgAuth
   repoSubDirectory: .
+  templateVersion: v1

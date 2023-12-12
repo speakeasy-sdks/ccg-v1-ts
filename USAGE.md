@@ -1,11 +1,11 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```typescript
 import { CcgAuth } from "ccgAuth";
 
-(async () => {
+async function run() {
     const sdk = new CcgAuth({
         security: {
-            httpCCG: "",
+            httpCCG: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         },
     });
 
@@ -14,7 +14,9 @@ import { CcgAuth } from "ccgAuth";
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
