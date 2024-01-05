@@ -1,0 +1,56 @@
+lockVersion: 2.0.0
+id: 00f64aee-f926-442e-a028-b0f285360e91
+management:
+  docChecksum: 0f8867eecb609441e54568f0193d015a
+  docVersion: "1.0"
+  speakeasyVersion: internal
+  generationVersion: 2.225.2
+  releaseVersion: 0.13.1
+  configChecksum: 7521b7e0fa0bcd4119b78e322b04b4a8
+  repoURL: https://github.com/speakeasy-sdks/ccg-v1-ts.git
+  repoSubDirectory: .
+  installationURL: https://github.com/speakeasy-sdks/ccg-v1-ts
+features:
+  typescript:
+    core: 3.4.1
+    globalSecurity: 2.82.2
+    globalServerURLs: 2.82.1
+generatedFiles:
+  - src/sdk/service.ts
+  - src/sdk/user.ts
+  - src/sdk/sdk.ts
+  - .eslintrc.yml
+  - jest.config.js
+  - package-lock.json
+  - package.json
+  - src/index.ts
+  - src/internal/utils/contenttype.ts
+  - src/internal/utils/headers.ts
+  - src/internal/utils/index.ts
+  - src/internal/utils/pathparams.ts
+  - src/internal/utils/queryparams.ts
+  - src/internal/utils/requestbody.ts
+  - src/internal/utils/retries.ts
+  - src/internal/utils/security.ts
+  - src/internal/utils/utils.ts
+  - src/sdk/index.ts
+  - src/sdk/models/errors/sdkerror.ts
+  - src/sdk/types/index.ts
+  - src/sdk/types/rfcdate.ts
+  - tsconfig.json
+  - src/sdk/models/operations/getstatus.ts
+  - src/sdk/models/operations/getuser.ts
+  - src/sdk/models/shared/security.ts
+  - src/sdk/models/errors/index.ts
+  - src/sdk/models/operations/index.ts
+  - src/sdk/models/shared/index.ts
+  - docs/sdk/models/operations/getstatusservicestatus.md
+  - docs/sdk/models/operations/getstatusresponse.md
+  - docs/sdk/models/operations/getuseruser.md
+  - docs/sdk/models/operations/getuserresponse.md
+  - docs/sdk/models/shared/security.md
+  - docs/sdks/ccgauth/README.md
+  - docs/sdks/service/README.md
+  - docs/sdks/user/README.md
+  - USAGE.md
+  - .gitattributes
